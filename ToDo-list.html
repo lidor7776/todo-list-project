@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+  </head>
+
+  <body>
+    <h1>To Do List</h1>
+    <p>Please insert task here!</p>
+    <input
+      class="js-input-task"
+      type="text"
+      placeholder="write task here"
+      onkeydown="
+    handleKeydown(event)"
+    />
+    <button class="js-button-add" onclick="clickButton()">Add</button>
+
+    <ul class="js-task-list"></ul>
+    <script>
+      function handleKeydown(event) {
+        if (event.key === "Enter") clickButton();
+      }
+      function clickButton() {
+        const taskElement = document.querySelector(".js-input-task");
+        const task = taskElement.value.trim();
+        if (task !== "") {
+          const ul = document.querySelector(".js-task-list");
+          const li = document.createElement("li");
+          const span = document.createElement("span");
+          span.innerText = task;
+          const deletebutton = document.createElement("button");
+          deletebutton.innerText = " Delete Task";
+          deletebutton.addEventListener("click", function () {
+            li.remove();
+          });
+          li.appendChild(span);
+          li.appendChild(deletebutton);
+          ul.appendChild(li);
+          taskElement.value = "";
+        }
+      }
+
+      //function pressEnter(e) {}
+    </script>
+  </body>
+</html>
