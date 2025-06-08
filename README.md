@@ -13,6 +13,5 @@ A simple ToDo list built with vanilla JavaScript and DOM manipulation.
 - HTML5
 - JavaScript (DOM)
 
-## Live Version
 
-(coming soon)
+](https://lidor7776.github.io/todo-list-project/)
